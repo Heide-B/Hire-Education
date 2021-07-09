@@ -1,9 +1,6 @@
-aiohttp @ file:///C:/ci/aiohttp_1602530153430/work
-altair @ file:///tmp/build/80754af9/altair_1599835197802/work
 anaconda-client==1.7.2
 anaconda-navigator==2.0.3
 appdirs==1.4.4
-argon2-cffi @ file:///C:/ci/argon2-cffi_1613037959010/work
 asgiref==3.3.4
 astor==0.8.1
 async-generator @ file:///home/ktietz/src/ci/async_generator_1611927993394/work
@@ -15,7 +12,6 @@ beautifulsoup4 @ file:///home/linux1/recipes/ci/beautifulsoup4_1610988766420/wor
 bleach @ file:///tmp/build/80754af9/bleach_1612211392645/work
 blinker==1.4
 blis @ file:///C:/ci/cython-blis_1613319488970/work
-bokeh @ file:///C:/ci/bokeh_1620784067744/work
 boto3 @ file:///tmp/build/80754af9/boto3_1625073318040/work
 botocore @ file:///tmp/build/80754af9/botocore_1624897753354/work
 branca @ file:///home/conda/feedstock_root/build_artifacts/branca_1609346930842/work
@@ -42,20 +38,13 @@ cymem @ file:///C:/ci/cymem_1613319310653/work
 Cython @ file:///C:/ci/cython_1618435363327/work
 decorator @ file:///home/ktietz/src/ci/decorator_1611930055503/work
 defusedxml @ file:///home/ktietz/src/ci_mi/defusedxml_1612808095953/work
-descartes==1.1.0
 distlib==0.3.1
-Django==3.2.4
-djangorestframework==3.12.4
-en-core-web-lg @ https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-2.3.1/en_core_web_lg-2.3.1.tar.gz
 entrypoints==0.3
 filelock==3.0.12
 Fiona==1.8.4
-folium==0.12.1
 funcy @ file:///home/conda/feedstock_root/build_artifacts/funcy_1620644331537/work
 future @ file:///D:/bld/future_1610147454374/work
 GDAL==2.3.3
-gensim @ file:///C:/ci/gensim_1621559146243/work
-geopandas==0.6.1
 gitdb==4.0.7
 GitPython==3.1.17
 google-api-core @ file:///C:/ci/google-api-core-split_1613980333946/work
@@ -79,12 +68,9 @@ joblib @ file:///home/conda/feedstock_root/build_artifacts/joblib_1612898609989/
 jsonschema @ file:///C:/ci/jsonschema_1594295134295/work
 jupyter-client @ file:///tmp/build/80754af9/jupyter_client_1601311786391/work
 jupyter-core @ file:///C:/ci/jupyter_core_1612213356021/work
-jupyterlab-pygments @ file:///tmp/build/80754af9/jupyterlab_pygments_1601490720602/work
-jupyterlab-widgets==1.0.0
 keyring @ file:///C:/ci/keyring_1601489747083/work
 kiwisolver @ file:///C:/ci/kiwisolver_1612282606037/work
 kneed @ file:///home/conda/feedstock_root/build_artifacts/kneed_1597304056973/work
-lxml @ file:///C:/ci/lxml_1616443455957/work
 MarkupSafe==1.1.1
 matplotlib @ file:///C:/ci/matplotlib-suite_1613408055530/work
 menuinst==1.4.16
@@ -124,7 +110,6 @@ pycosat==0.6.3
 pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
 pydeck==0.6.2
 Pygments @ file:///tmp/build/80754af9/pygments_1610565767015/work
-pyLDAvis @ file:///home/conda/feedstock_root/build_artifacts/pyldavis_1616598811607/work
 pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1605545627475/work
 pyparsing @ file:///home/linux1/recipes/ci/pyparsing_1610983426697/work
 pyproj==1.9.6
@@ -140,15 +125,12 @@ PyYAML==5.4.1
 pyzmq==20.0.0
 QtPy==1.9.0
 regex @ file:///C:/ci/regex_1617569893741/work
-requests @ file:///tmp/build/80754af9/requests_1608241421344/work
 rsa @ file:///tmp/build/80754af9/rsa_1614366226499/work
 Rtree @ file:///C:/ci/rtree_1618421009405/work
 ruamel-yaml==0.15.87
 s3transfer @ file:///tmp/build/80754af9/s3transfer_1623278116614/work
 scikit-learn @ file:///D:/bld/scikit-learn_1619628780927/work
 scipy @ file:///C:/ci/scipy_1618856128765/work
-seaborn @ file:///tmp/build/80754af9/seaborn_1608578541026/work
-selenium @ file:///D:/bld/selenium_1610664674276/work
 Send2Trash @ file:///tmp/build/80754af9/send2trash_1607525499227/work
 Shapely==1.6.4.post1
 sip==4.19.13
@@ -157,11 +139,9 @@ smart-open @ file:///tmp/build/80754af9/smart_open_1623928409369/work
 smmap==4.0.0
 soupsieve @ file:///tmp/build/80754af9/soupsieve_1616183228191/work
 spacy @ file:///C:/ci/spacy_1608303051812/work
-spotipy @ file:///home/conda/feedstock_root/build_artifacts/spotipy_1614532944952/work
 sqlparse @ file:///tmp/build/80754af9/sqlparse_1602184451250/work
 srsly @ file:///C:/ci/srsly_1607542026061/work
 streamlit==0.82.0
-streamlit-folium==0.3.0
 terminado==0.9.2
 testpath @ file:///home/ktietz/src/ci/testpath_1611930608132/work
 thinc @ file:///C:/ci/thinc_1607704777175/work
@@ -175,7 +155,6 @@ typing-extensions @ file:///home/ktietz/src/ci_mi/typing_extensions_161280820962
 tzlocal==2.1
 urllib3 @ file:///home/conda/feedstock_root/build_artifacts/urllib3_1615828766818/work
 validators==0.18.2
-vega-datasets @ file:///home/conda/feedstock_root/build_artifacts/vega_datasets_1606414058616/work
 virtualenv==20.4.2
 wasabi @ file:///tmp/build/80754af9/wasabi_1612219178408/work
 watchdog==2.1.1
@@ -184,7 +163,6 @@ webencodings==0.5.1
 widgetsnbextension==3.5.1
 win-inet-pton @ file:///C:/ci/win_inet_pton_1605306167264/work
 wincertstore==0.2
-wordcloud @ file:///D:/bld/wordcloud_1605555818646/work
 xmltodict==0.12.0
 yarl @ file:///C:/ci/yarl_1598045274898/work
 zipp @ file:///tmp/build/80754af9/zipp_1604001098328/work
