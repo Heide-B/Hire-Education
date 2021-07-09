@@ -3,9 +3,9 @@ pandas==1.2.2
 numpy==1.20.2
 scikit-learn==0.24.2
 base58==2.1.0
-spacy==2.3.5
 regex==2021.4.4
-python -m spacy download en_core_web_lg-3.1.0 --direct
+spacy>=3.0.0,<4.0.0
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz#egg=en_core_web_sm
 
 appdirs==1.4.4
 asgiref==3.3.4
