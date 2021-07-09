@@ -5,22 +5,18 @@ scikit-learn==0.24.2
 base58==2.1.0
 spacy==2.3.5
 regex==2021.4.4
+en_core_web_lg==2.3.1
 
 appdirs==1.4.4
 asgiref==3.3.4
 astor==0.8.1
 async-timeout==3.0.1
 catalogue==1.0.0
-certifi==2021.5.30
-click-plugins==1.1.1
-cligj==0.7.1
 distlib==0.3.1
 entrypoints==0.3
 filelock==3.0.12
-Fiona==1.8.4
 gitdb==4.0.7
 GitPython==3.1.17
-ipywidgets==7.6.3
 jedi==0.17.0
 MarkupSafe==1.1.1
 
