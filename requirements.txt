@@ -10,8 +10,6 @@ appdirs==1.4.4
 asgiref==3.3.4
 astor==0.8.1
 async-timeout==3.0.1
-blinker==1.4
-brotlipy==0.7.0
 catalogue==1.0.0
 certifi==2021.5.30
 click-plugins==1.1.1
