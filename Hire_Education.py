@@ -22,7 +22,6 @@ def find_job(response, job_titles):
 def search_courses(to_search):
     search = df[df['title'] == to_search]['Dominant_Topic'].unique()
     search = ''.join(search)
-    ## Input search keyword here
     search_in = nlp(search.lower())
     
     if search == 'Data Engineering':
@@ -33,33 +32,11 @@ def search_courses(to_search):
         search_terms = ['machine','use','visualization','portfolio','python','product','sql','tableau','vendor','member']
     elif search == 'Business Application':
         search_terms = ['marketing','update','evaluation','resolve','message','budgets','upload','activities','kpis forecast','predict']
-
-    ## Getting the nlp similarity score of each term in "search_terms" and "search_in" 
-#    results = pd.DataFrame()
-#    for term in search_terms:
-#        t = nlp(term)
-#        score = t.similarity(search_in)
-#        t = {'term': term,'score':score}
-#        results = results.append(t, ignore_index = True)
-#    top_terms = results.sort_values(by="score",ascending=False).head(3)["term"].values.tolist()
-
-    ## The top 3 skills based on similarity to aid in filtering
-#    courses = pd.DataFrame()
-#    for term in top_terms:
-#        tmp = df_all[df_all["skill"] == term]
-#        courses = pd.concat([courses,tmp],ignore_index=True)
-
-    ## Filtering the courses in two steps. 
-    ## [1] Get the similarity of search item and the course title,
-    ## [2] Sort courses based on comments_score and rating
-    ## [3] Sort courses based on similarity score and drop duplicates based on title
     
     for term in search_terms:
         t = nlp(term)
         for i in range(len(df_all)):
-            score = t.similarity(df_all['title'][i])
-            df_all['similarity'][i] = score
-#    df_all['similarity'] = df_all['title'].apply(lambda x: nlp(x.lower()).similarity(search_terms[1]) )
+            df_all['similarity'].iloc[i] = t.similarity(df_all['title'].iloc[i])
     
     similarity_df = df_all.sort_values(by=["comments_score","rating"],ascending=False)
     similarity_df = similarity_df.sort_values(by=["similarity"],ascending=False).drop_duplicates(subset=["title"]).head(3)
@@ -125,10 +102,18 @@ elif my_page == 'The Data':
     st.write(df_all.head(20))
 
 elif my_page == 'Our Methods':
-    st.title("Data")
-    st.header("Public School Data in the Philippines")
+    st.image('methods.png')
+    st.header("STAGE 1: Extraction & Preparation of Job Data")
+    st.subheader('Scraping Methods and Considerations')
+    st.write('We used a combination of BeautifulSoup and Selenium to access data on Jobstreet and Monster. Project’s Time Constraints, Limited Processing Power, and HCaptcha Interference were considerations and limitations at this stage')
 
-    st.write(df.head(20))
+    st.image("stage1.png")
+    
+    st.header("STAGE 2: Extraction & Preparation of Course Data")
+    st.subheader('Scraping Methods and Considerations')
+    st.write('We used a combination of BeautifulSoup and Selenium to access data on Coursera. Udemy’s Native API was also utilized. Project’s Time Constraints, Limited Processing Power, and Approval time for Udemy API were considerations and limitations at this stage')
+
+    st.image("stage2.png")
 
 elif my_page == 'Hire Education Recommender':
     st.title("Hire Education Recommender Engine")
