@@ -5,7 +5,7 @@ import base64
 import spacy
 import re
 import random
-nlp = spacy.load("en_core_web_lg")
+nlp = spacy.load("en_core_web_sm")
 
 df_all = pd.read_csv("courses_clean.csv", index_col=0)
 df = pd.read_csv("combined.csv")
