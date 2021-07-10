@@ -19,7 +19,6 @@ def find_job(response, job_titles):
     return job_titles
 
 def search_courses(to_search):
-    search = df[df['title'] == to_search]['Dominant_Topic'].unique()
     search = ''.join(search)
     ## Input search keyword here
     search_in = nlp(search.lower())
@@ -27,11 +26,11 @@ def search_courses(to_search):
     if search == 'Data Engineering':
         search_terms = ['developer','analyst','sap','engineer','java','sql','.net','manager','salesforce','web']
     elif search == 'Modelling/Analysis':
-        search_terms = ['modeling','analytical','statistic','excel','environment','machine']
+        search_terms = ['use','product','least','modeling','analytical','portfolio','statistic','excel','environment','machine']
     elif search == 'Data Storytelling':
-        search_terms = ['machine','visualization','portfolio','python','product','sql','tableau']
+        search_terms = ['machine','use','visualization','portfolio','python','product','sql','tableau','vendor','member']
     elif search == 'Business Application':
-        search_terms = ['marketing','evaluation','budgets','kpis forecast','predict']
+        search_terms = ['marketing','update','evaluation','resolve','message','budgets','upload','activities','kpis forecast','predict']
 
     ## Getting the nlp similarity score of each term in "search_terms" and "search_in" 
 #    results = pd.DataFrame()
@@ -53,16 +52,22 @@ def search_courses(to_search):
     ## [2] Sort courses based on comments_score and rating
     ## [3] Sort courses based on similarity score and drop duplicates based on title
     
+    courses = pd.DataFrame()
+    for item in search_terms:
+        temp = df_all[df_all['skill'].str.contains(item) == True]
+        courses = pd.concat([courses, temp])
     
-    for term in search_terms:
-        t = nlp(term)
-        for i in range(len(df_all)):
-            df_all['similarity'] = 0.0
-            df_all['similarity'].iloc[i] = t.similarity(nlp(df_all['title'].iloc[i]))
+    courses['similarity'] = 0.0
+    for i in range(len(courses)): 
+        init = []
+        for term in search_terms:
+            t = nlp(term)
+            init.append(t.similarity(nlp(courses['title'].iloc[i])))
+        courses['similarity'].iloc[i] = max(init)
 #    df_all['similarity'] = df_all['title'].apply(lambda x: nlp(x.lower()).similarity(search_terms[1]) )
     
-    similarity_df = df_all.sort_values(by=["comments_score","rating"],ascending=False)
-    similarity_df = similarity_df.sort_values(by=["similarity"],ascending=False).drop_duplicates(subset=["title"]).head(3)
+    similarity_df = courses.sort_values(by=["comments_score","rating"],ascending=False)
+    similarity_df = similarity_df.sort_values(by=["similarity"],ascending=False).drop_duplicates(subset=["title",'skill']).head(3)
 
     # Pretty output mehehe
     for _,row in similarity_df.iterrows():
@@ -143,11 +148,10 @@ elif my_page == 'Hire Education Recommender':
     st.header("Learn the skills you need for the job you want")
     titles=[]
 
-    response = st.selectbox('Choose Your Field of Specialization', ['','Data Engineering','Modelling/Analysis','Data Storytelling','Business Application'])
-    if response != '':
+    user_input = st.selectbox('Choose Your Field of Specialization', ['','Data Engineering','Modelling/Analysis','Data Storytelling','Business Application'])
+    if user_input != '':
         job_titles=[]
-        job_titles = find_job(response, job_titles)
-        user_input = st.selectbox('Choose Your Potential Job!', job_titles)
-        "Here are some courses to help you get hired as a/n: ", user_input
-        if user_input != '':
-            search_courses(user_input)
+        job_titles = find_job(user_input, job_titles)
+        st.write('Here are some jobs you can get under this specialization!', job_titles)
+        "Here are some courses to help you get hired as a: ", response
+        search_courses(user_input)
