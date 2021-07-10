@@ -155,5 +155,5 @@ elif my_page == 'Hire Education Recommender':
         st.write('Here are some jobs you can get under this specialization!')
         for i in job_titles:
             st.write(i)
-        "Here are some courses to help you get hired as a: ", user_input
+        st.subheader("Here are some courses to help you get hired as a: ", user_input)
         search_courses(user_input)
