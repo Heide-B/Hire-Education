@@ -19,7 +19,7 @@ def find_job(response, job_titles):
     return job_titles
 
 def search_courses(to_search):
-    search = ''.join(search)
+    search = ''.join(to_search)
     ## Input search keyword here
     search_in = nlp(search.lower())
     
@@ -152,6 +152,8 @@ elif my_page == 'Hire Education Recommender':
     if user_input != '':
         job_titles=[]
         job_titles = find_job(user_input, job_titles)
-        st.write('Here are some jobs you can get under this specialization!', job_titles)
-        "Here are some courses to help you get hired as a: ", response
+        st.write('Here are some jobs you can get under this specialization!')
+        for i in job_titles:
+            st.write(i)
+        "Here are some courses to help you get hired as a: ", user_input
         search_courses(user_input)
