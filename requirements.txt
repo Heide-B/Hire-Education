@@ -6,4 +6,4 @@ base58==2.1.0
 regex==2021.4.4
 en_core_web_sm==3.0.0
 spacy==3.3.1
-https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz#egg=en_core_web_sm
+click==7.0.0
